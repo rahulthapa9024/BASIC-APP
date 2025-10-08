@@ -2,15 +2,17 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth"; // ✅ Add this line
 
+console.log(import.meta.env.apiKey)
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAwBZ5Jhqdah7on28Eoo7D5TsiZta7jgN0",
-  authDomain: "login-5a38e.firebaseapp.com",
-  projectId: "login-5a38e",
-  storageBucket: "login-5a38e.appspot.com", // ✅ fixed incorrect domain
-  messagingSenderId: "791580515082",
-  appId: "1:791580515082:web:377ef57eb552847701b8f3"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
